@@ -11,11 +11,17 @@ const Nav = () => {
 	const MenuButton = ReactDOM.createPortal(
 		<div
 			onClick={() => setIsMenuOpen(!isMenuOpen)}
-			className="absolute left-7 top-7 flex h-[14px] cursor-pointer flex-col gap-1 md:hidden"
+			className="absolute left-7 top-[26px] flex cursor-pointer flex-col gap-1 md:hidden"
 		>
-			<div className={`pointer-events-none h-[2px] w-5 ${menuBg}`}></div>
-			<div className={`pointer-events-none h-[2px] w-5 ${menuBg}`}></div>
-			<div className={`pointer-events-none h-[2px] w-5 ${menuBg}`}></div>
+			<div
+				className={`pointer-events-none h-[3px] w-5 transition-all duration-300 ${menuBg} ${isMenuOpen ? 'translate-y-[7px] rotate-45' : ' '} `}
+			></div>
+			<div
+				className={`pointer-events-none h-[3px] w-5 transition-all duration-300 ${menuBg} ${isMenuOpen ? 'opacity-0' : ' '}`}
+			></div>
+			<div
+				className={`pointer-events-none h-[3px] w-5 transition-all duration-300 ${menuBg} ${isMenuOpen ? '-translate-y-[7px] -rotate-45' : ' '}`}
+			></div>
 		</div>,
 		document.getElementById('menuBtn')
 	);
