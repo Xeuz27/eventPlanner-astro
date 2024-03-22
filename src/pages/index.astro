@@ -1,5 +1,22 @@
 ---
+import Footer from '@components/sections/Footer.astro';
+import Hero from '@components/sections/Hero.astro';
+import img2 from '@assets/Edit_09.webp';
 import Layout from '../layouts/Layout.astro';
+import Section from '@components/Section.astro';
+import Section3 from '@components/sections/Section3.astro';
 ---
 
-<Layout title="Welcome to Astro." />
+<Layout title="Welcome to Astro.">
+	<Hero />
+	<Section title="seccion 2" classes="">
+		<p
+			class="absolute left-[27%] top-[8%] text-center font-inherit text-[3vw] font-semibold italic text-primary"
+		>
+			¡Transformando tu evento soñando <br /> en momentos inolvidables!
+		</p>
+		<img src={img2.src} alt="" />
+	</Section>
+	<Section3 title="seccion 3" classes="" />
+	<Footer />
+</Layout>
