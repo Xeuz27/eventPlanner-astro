@@ -1,0 +1,33 @@
+---
+import Section from '@components/Section.astro';
+import { footerLinks } from '../../data/siteConfig';
+import Facebook from '@icons/Facebook.astro';
+import Instagram from '@icons/Instagram.astro';
+import Whatsapp from '@icons/Whatsapp.astro';
+import Mail from '@icons/Mail.astro';
+const icons: Record<string, any> = { Facebook, Instagram, Whatsapp, Mail };
+---
+
+<Section title="footer" classes="max-md:py-4 py-12 bg-primary">
+	<footer class="relative px-2">
+		<div
+			class="absolute left-[1rem] top-2/4 z-10 hidden h-[1px] w-[calc(100%-2rem)] bg-white md:block"
+		>
+		</div>
+		<ul
+			class="flex flex-col items-center justify-center bg-primary text-white max-md:gap-4 md:flex-row"
+		>
+			{
+				footerLinks.map(({ display }) => {
+					const Icon = icons[display];
+					return (
+						<li class="z-20 flex gap-1 bg-primary px-2">
+							<Icon />
+							<p>{display}</p>
+						</li>
+					);
+				})
+			}
+		</ul>
+	</footer>
+</Section>
