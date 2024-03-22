@@ -1,0 +1,15 @@
+---
+const { title, classes } = Astro.props;
+---
+
+<section class={`relative ${classes}`} id={title}>
+	<slot />
+</section>
+<style is:global>
+	@tailwind base;
+	@tailwind components;
+	@tailwind utilities;
+	section img {
+		@apply h-auto w-full object-cover object-center;
+	}
+</style>
