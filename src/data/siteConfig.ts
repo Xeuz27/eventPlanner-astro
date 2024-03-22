@@ -10,3 +10,12 @@ export const navLinks = [
 	{ display: 'Eventos', path: '/eventos' },
 	{ display: 'Contactame', path: '/contactame', highlight: true }
 ];
+interface footerLinks {
+	display: string;
+}
+export const footerLinks = [
+	{ display: 'Facebook' },
+	{ display: 'Instagram' },
+	{ display: 'Whatsapp' },
+	{ display: 'Mail' }
+];
