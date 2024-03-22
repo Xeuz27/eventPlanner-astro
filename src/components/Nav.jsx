@@ -2,16 +2,16 @@ import ReactDOM from 'react-dom';
 import { useState } from 'react';
 import { navLinks } from '../data/siteConfig';
 import logo from '@assets/Edit_01.webp';
-const navMobile = '';
+const navMobile = '/*TODO: CREAR NAVMOBILE CLASSES CON TERNARIAS Y CONSTANTES*/';
 
 const Nav = () => {
-	const [isMenuOpen, setIsMenuOpen] = useState(true);
-	const menuLeft = isMenuOpen ? 'left-0' : 'left-[-320px]';
-	const menuBg = isMenuOpen ? 'bg-white' : 'bg-black';
+	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const menuLeft = isMenuOpen ? 'left-0' : 'left-[-100%]';
+	const menuBg = isMenuOpen ? 'bg-white' : 'bg-white';
 	const MenuButton = ReactDOM.createPortal(
 		<div
 			onClick={() => setIsMenuOpen(!isMenuOpen)}
-			className="absolute left-7 top-[26px] flex cursor-pointer flex-col gap-1 md:hidden"
+			className="fixed left-7 top-[26px] z-30 flex cursor-pointer flex-col gap-1 border-[2px] border-black bg-black md:hidden"
 		>
 			<div
 				className={`pointer-events-none h-[3px] w-5 transition-all duration-300 ${menuBg} ${isMenuOpen ? 'translate-y-[7px] rotate-45' : ' '} `}
@@ -27,7 +27,7 @@ const Nav = () => {
 	);
 	return (
 		<header
-			className={`fixed bottom-0 xs:w-[300px] ${menuLeft} top-0 flex w-full flex-col items-center gap-2 bg-primary px-8 py-4 transition-all duration-500 md:inset-auto md:w-full md:flex-row md:justify-between md:px-4`}
+			className={`fixed bottom-0 z-30 max-md:border-r xs:w-[300px] md:border-b md:border-stone-400 ${menuLeft} top-0 flex flex-col items-center gap-2 bg-primary px-8 py-4 transition-all duration-500 md:inset-auto md:w-full md:flex-row md:justify-between md:px-4`}
 		>
 			<div className="flex w-full flex-row-reverse items-center justify-between md:w-auto">
 				<div className="h-[36px] w-[57px] overflow-hidden">
