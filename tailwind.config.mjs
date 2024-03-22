@@ -8,6 +8,9 @@ export default {
 			},
 			colors: {
 				primary: '#03183b'
+			},
+			fontFamily: {
+				inherit: 'inherit'
 			}
 		}
 	},
