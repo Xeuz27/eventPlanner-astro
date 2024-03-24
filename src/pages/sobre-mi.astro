@@ -1,0 +1,59 @@
+---
+import Section5 from '@components/sections/Section5.astro';
+import Section4 from '@components/sections/Section4.astro';
+import Layout from '@layouts/Layout.astro';
+import WaveSection5 from '@components/icons/WaveSection5.astro';
+---
+
+<Layout title="sobre mi ~ miguel galicia ~ Event Planner">
+	<Section4
+		title="seccion4"
+		classes="h-[908px] bg-cover bg-top bg-no-repeat bg-[url('../assets/miguelBG.webp')]"
+	>
+		<h1
+			class="mx-auto pt-24 text-center font-inherit text-5xl font-semibold tracking-wider text-primary"
+		>
+			¡Te ayudo a organizar <br />
+			<span class="font-extrabold"> tu evento Soñado! </span>
+		</h1>
+		<div
+			class="ml-auto flex max-w-[660px] flex-col items-end justify-end gap-2 px-16 py-12 text-primary"
+		>
+			<p class="font-inherit text-base font-semibold">
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta similique quo libero officia
+				architecto. Similique ducimus dolores consequuntur quas blanditiis, vitae expedita
+				temporibus quasi nobis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde iusto
+				aperiam quos eveniet quae blanditiis repudiandae ex, sed excepturi illum.
+			</p>
+			<p class="font-inherit text-base font-semibold">
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta similique quo libero officia
+				architecto. Similique ducimus dolores consequuntur quas blanditiis, vitae expedita
+				temporibus quasi nobis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde iusto
+				aperiam quos eveniet quae blanditiis repudiandae ex, sed excepturi illum.
+			</p>
+			<p class="font-inherit text-base font-semibold">
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta similique quo libero officia
+				architecto. Similique ducimus dolores consequuntur quas blanditiis, vitae expedita
+				temporibus quasi nobis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde iusto
+				aperiam quos eveniet quae blanditiis repudiandae ex, sed excepturi illum.
+			</p>
+			<p class="font-inherit text-base font-semibold">
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta similique quo libero officia
+				architecto. Similique ducimus dolores consequuntur quas blanditiis, vitae expedita
+				temporibus quasi nobis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde iusto
+				aperiam quos eveniet quae blanditiis repudiandae ex, sed excepturi illum.
+			</p>
+			<p class="font-inherit text-base font-semibold">
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta similique quo libero officia
+				architecto. Similique ducimus dolores consequuntur quas blanditiis, vitae expedita
+				temporibus quasi nobis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde iusto
+				aperiam quos eveniet quae blanditiis repudiandae ex, sed excepturi illum.
+			</p>
+		</div>
+	</Section4>
+	<Section5 title="section5" classes="bg-primary text-white text-center py-4">
+		<h2 class="font-inherit text-5xl font-semibold">mis servicios</h2>
+		<h3 class="font-inherit text-2xl font-semibold">como puedo ayudarte?</h3>
+		<WaveSection5 classes="text-white bg-primary" />
+	</Section5>
+</Layout>

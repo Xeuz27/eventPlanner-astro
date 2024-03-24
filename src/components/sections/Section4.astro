@@ -1,0 +1,10 @@
+---
+import Section from '@components/Section.astro';
+import miguel from '@assets/miguelBG.webp';
+const { title, classes } = Astro.props;
+---
+
+<Section title={title} classes={classes}>
+	<!-- <img src={miguel.src} alt="" /> -->
+	<slot />
+</Section>

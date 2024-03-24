@@ -1,0 +1,23 @@
+---
+import type { SVGAttributes } from 'react';
+import type { HTMLAttributes } from 'astro/types';
+const { classes} = Astro.props;
+interface Props extends HTMLAttributes<'svg'> {
+  classes?: string;
+}
+interface TextPathProps extends HTMLAttributes<SVGTextPathElement> {
+  alignmentBaseline: 'top'; // Define alignment-baseline as a required prop
+  xlinkHref: string; // Define xlink:href as a required prop
+}
+---
+<svg xmlns="http://www.w3.org/2000/svg" class={classes} viewBox="0 0 1440 320">
+	<path
+		id="curve"
+		fill="currentColor"
+		fill-opacity="1"
+		d="M0,32L30,74.7C60,117,120,203,180,208C240,213,300,139,360,90.7C420,43,480,21,540,16C600,11,660,21,720,64C780,107,840,181,900,218.7C960,256,1020,256,1080,245.3C1140,235,1200,213,1260,186.7C1320,160,1380,128,1410,112L1440,96L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"
+	></path>
+	<text width="500">
+		<textPath class={classes} alignment-baseline="top" xlink:href="#curve">Dangerous Curves Ahead</textPath>
+	</text>
+</svg>
