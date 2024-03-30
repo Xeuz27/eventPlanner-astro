@@ -48,7 +48,7 @@ const Nav = () => {
 						const afterActiveLink =
 							"after:bg-white after:absolute after:-top-4 after:hidden after:h-2 after:w-full after:content-[''] after:hover:block";
 						return (
-							<li className="relative">
+							<li key={path} className="relative">
 								<a
 									className={`${classes} ${highlight && 'bg-white bg-opacity-80  text-black text-opacity-95 hover:bg-opacity-20 hover:text-white hover:text-opacity-100'}`}
 									href={path}
