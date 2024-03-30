@@ -2,48 +2,48 @@
 import Section5 from '@components/sections/Section5.astro';
 import Section4 from '@components/sections/Section4.astro';
 import Layout from '@layouts/Layout.astro';
-import img from '@assets/Edit_10.webp';
+import { services } from 'src/data/siteConfig';
 ---
 
 <Layout title="sobre mi ~ miguel galicia ~ Event Planner">
 	<Section4
 		title="seccion4"
-		classes="h-[908px] bg-cover bg-top bg-no-repeat bg-[url('../assets/miguelBG.webp')]"
+		classes="lg:h-[908px] bg-cover bg-top bg-no-repeat bg-[url('../assets/miguelBG.webp')]"
 	>
 		<h1
-			class="mx-auto pt-24 text-center font-inherit text-5xl font-semibold tracking-wider text-primary"
+			class="mx-auto pt-12 text-center font-inherit text-5xl font-semibold tracking-wider text-primary max-lg:px-2 md:pt-24"
 		>
 			¡Te ayudo a organizar <br />
 			<span class="font-extrabold"> tu evento Soñado! </span>
 		</h1>
 		<div
-			class="ml-auto flex max-w-[660px] flex-col items-end justify-end gap-2 px-16 py-12 text-primary"
+			class="flex max-w-[660px] flex-col items-end justify-end gap-2 px-[4rem] py-12 text-primary max-md:mx-auto md:ml-auto"
 		>
-			<p class="font-inherit text-base font-semibold">
+			<p class="font-inherit text-[3.5vw] font-semibold md:text-base">
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta similique quo libero officia
 				architecto. Similique ducimus dolores consequuntur quas blanditiis, vitae expedita
 				temporibus quasi nobis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde iusto
 				aperiam quos eveniet quae blanditiis repudiandae ex, sed excepturi illum.
 			</p>
-			<p class="font-inherit text-base font-semibold">
+			<p class="font-inherit text-[3.5vw] font-semibold md:text-base">
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta similique quo libero officia
 				architecto. Similique ducimus dolores consequuntur quas blanditiis, vitae expedita
 				temporibus quasi nobis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde iusto
 				aperiam quos eveniet quae blanditiis repudiandae ex, sed excepturi illum.
 			</p>
-			<p class="font-inherit text-base font-semibold">
+			<p class="font-inherit text-[3.5vw] font-semibold md:text-base">
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta similique quo libero officia
 				architecto. Similique ducimus dolores consequuntur quas blanditiis, vitae expedita
 				temporibus quasi nobis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde iusto
 				aperiam quos eveniet quae blanditiis repudiandae ex, sed excepturi illum.
 			</p>
-			<p class="font-inherit text-base font-semibold">
+			<p class="font-inherit text-[3.5vw] font-semibold md:text-base">
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta similique quo libero officia
 				architecto. Similique ducimus dolores consequuntur quas blanditiis, vitae expedita
 				temporibus quasi nobis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde iusto
 				aperiam quos eveniet quae blanditiis repudiandae ex, sed excepturi illum.
 			</p>
-			<p class="font-inherit text-base font-semibold">
+			<p class="font-inherit text-[3.5vw] font-semibold md:text-base">
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta similique quo libero officia
 				architecto. Similique ducimus dolores consequuntur quas blanditiis, vitae expedita
 				temporibus quasi nobis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde iusto
@@ -53,9 +53,59 @@ import img from '@assets/Edit_10.webp';
 	</Section4>
 	<Section5
 		title="section5"
-		classes="bg-cover bg-[center_top_-3rem] h-[270px] bg-no-repeat bg-[url('../assets/Edit_10.webp')] text-white text-center py-4"
+		classes="bg-cover md:bg-[center_top_-3rem] lg:bg-[center_top_-4.5rem] bg-primary bg-[center_top_-0rem] h-[180px] lg:h-[270px] md:h-[215px] bg-no-repeat bg-[url('../assets/Edit_10.webp')] text-white text-center py-4"
 	>
 		<h2 class="font-inherit text-5xl font-semibold">mis servicios</h2>
 		<h3 class="font-inherit text-2xl font-semibold">como puedo ayudarte?</h3>
 	</Section5>
+	<section class="pb-12 lg:py-12">
+		<ul
+			class="flex flex-col items-center justify-center text-primary max-lg:gap-4 lg:grid lg:grid-cols-3"
+		>
+			{
+				services
+					.map(({ title }) => {
+						return (
+							<li>
+								<article class="flex flex-col items-center gap-1 text-center">
+									<header class="flex min-h-16 max-w-44 items-center">
+										<h4 class="text-xl font-bold text-inherit">{title}</h4>
+									</header>
+									<p id={title} />
+								</article>
+							</li>
+						);
+					})
+					.slice(0, 3)
+			}
+		</ul>
+		<ul
+			class="mt-4 flex flex-col justify-center gap-4 text-primary lg:mt-8 lg:grid lg:grid-cols-[repeat(2,auto)] lg:gap-12"
+		>
+			{
+				services
+					.map(({ title }) => {
+						return (
+							<li>
+								<article class="flex flex-col items-center gap-1 text-center">
+									<header class="flex min-h-16 max-w-44 items-center">
+										<h4 class="text-xl font-bold text-inherit">{title}</h4>
+									</header>
+									<p id={title} />
+								</article>
+							</li>
+						);
+					})
+					.slice(3, 5)
+			}
+		</ul>
+		<script>
+			import { services } from '@data/siteConfig';
+			services.map(({ title, body }) => {
+				const articleParagrahp = document.getElementById(title);
+				if (!articleParagrahp) return;
+				articleParagrahp.innerText = body;
+			});
+		</script>
+	</section>
 </Layout>
