@@ -2,7 +2,7 @@
 import Section5 from '@components/sections/Section5.astro';
 import Section4 from '@components/sections/Section4.astro';
 import Layout from '@layouts/Layout.astro';
-import WaveSection5 from '@components/icons/WaveSection5.astro';
+import img from '@assets/Edit_10.webp';
 ---
 
 <Layout title="sobre mi ~ miguel galicia ~ Event Planner">
@@ -51,9 +51,11 @@ import WaveSection5 from '@components/icons/WaveSection5.astro';
 			</p>
 		</div>
 	</Section4>
-	<Section5 title="section5" classes="bg-primary text-white text-center py-4">
+	<Section5
+		title="section5"
+		classes="bg-cover bg-[center_top_-3rem] h-[270px] bg-no-repeat bg-[url('../assets/Edit_10.webp')] text-white text-center py-4"
+	>
 		<h2 class="font-inherit text-5xl font-semibold">mis servicios</h2>
 		<h3 class="font-inherit text-2xl font-semibold">como puedo ayudarte?</h3>
-		<WaveSection5 classes="text-white bg-primary" />
 	</Section5>
 </Layout>
