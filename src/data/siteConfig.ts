@@ -1,4 +1,7 @@
 import type { StringLiteral } from 'typescript';
+import img1 from '../assets/pag3_img3.webp';
+import img2 from '../assets/pag3_img2.webp';
+import img3 from '../assets/pag3_img1.webp';
 
 interface navLinks {
 	display: string;
@@ -61,5 +64,32 @@ export const services = [
 		body: `Equipo de profesionales que
 				hacen parte de un evento para
 				coordinar su efecto desarrollo`
+	}
+];
+interface SERVICIOS {
+	title: string;
+	description: string;
+}
+export const SERVICIOS = [
+	{
+		bgColor: 'uno',
+		imgUrl: img1.src,
+		title: 'ORGANIZACION COMPLETA',
+		description:
+			'Te acompaño durante todo el proceso de planificación, asesorandote y asi definir el tipo de evento, concepto, estilo y presupuesto; la contratación de proveedores, seguimiento de actividades, el diseño de los tiempos de la celebración, coordinación y logística del día del evento.'
+	},
+	{
+		bgColor: 'dos',
+		imgUrl: img2.src,
+		title: 'ORGANIZACION PARCIAL',
+		description:
+			'Me involucro en la planificación en una fase más avan&shy;zada, cuando ya han sido contratados los principales proveedores como la locación, el catering y la decora&shy;ción. Continuo con el proceso de contratación del resto de proveedores necesarios y todas las actividades pre&shy;vias al evento, incluyendo la coordinación y logística de ese día.'
+	},
+	{
+		bgColor: 'tres',
+		imgUrl: img3.src,
+		title: 'PROTOCOLO',
+		description:
+			'Inicio la coordinación un mes antes del evento. Recopi&shy;lando, verificando y confirmando la información de los proveedores que han sido contratados por el cliente. Diseño los tiempos de las actividades y coordino la logís&shy;tica del día del evento.'
 	}
 ];
