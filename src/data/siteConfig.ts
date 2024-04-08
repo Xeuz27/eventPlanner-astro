@@ -16,9 +16,12 @@ interface footerLinks {
 	display: string;
 }
 export const footerLinks = [
-	{ display: 'Facebook' },
-	{ display: 'Instagram' },
-	{ display: 'Whatsapp' },
+	{ display: 'Facebook', url: 'https://www.facebook.com/profile.php?id=100036812820730' },
+	{ display: 'Instagram', url: 'https://www.instagram.com/soymiguelgalicia/' },
+	{
+		display: 'Whatsapp',
+		url: 'https://api.whatsapp.com/message/YH3NP3IJ2N7GB1?autoload=1&app_absent=0'
+	},
 	{ display: 'Mail' }
 ];
 interface services {
