@@ -53,7 +53,7 @@ import { services } from 'src/data/siteConfig';
 	</Section4>
 	<Section5
 		title="section5"
-		classes="bg-cover md:bg-[center_top_-3rem] lg:bg-[center_top_-4.5rem] bg-primary bg-[center_top_-0rem] h-[180px] lg:h-[270px] md:h-[215px] bg-no-repeat bg-[url('../assets/Edit_10.webp')] text-white text-center py-4"
+		classes="bg-cover bg-primary  bg-[center_bottom_0rem]  bg-no-repeat bg-[url('../assets/Edit_10.webp')] text-white text-center py-4"
 	>
 		<h2 class="font-inherit text-5xl font-semibold">mis servicios</h2>
 		<h3 class="font-inherit text-2xl font-semibold">como puedo ayudarte?</h3>
@@ -109,3 +109,8 @@ import { services } from 'src/data/siteConfig';
 		</script>
 	</section>
 </Layout>
+<style is:global>
+	section#section5 {
+		height: clamp(180px, 31vw, 420px);
+	}
+</style>
