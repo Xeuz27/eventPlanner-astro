@@ -1,6 +1,9 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import { SERVICIOS } from '@data/siteConfig';
+import { SERVICIOS, servicios3 } from '@data/siteConfig';
+import celebraciones from '../assets/celebraciones.astro';
+import Celebraciones from '../assets/celebraciones.astro';
+import Compromisos from '@assets/compromisos.astro';
 ---
 
 <Layout
@@ -38,6 +41,26 @@ import { SERVICIOS } from '@data/siteConfig';
 										{description}
 									</p>
 								</div>
+							</article>
+						</li>
+					);
+				})
+			}
+		</ul>
+	</div>
+	<div class="">
+		<ul>
+			{
+				servicios3.map(({ title, icon, imgUrl }) => {
+					return (
+						<li>
+							<article>
+								<header>
+									<Celebraciones classes="size-12 bg-primary" />
+									<Compromisos classes=" size-12 bg-primary" />
+									// <img class="size-12 bg-primary" src={icon} alt="" />
+									<p>{title}</p>
+								</header>
 							</article>
 						</li>
 					);
