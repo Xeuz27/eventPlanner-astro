@@ -18,9 +18,16 @@ const icons: Record<string, any> = { Facebook, Instagram, Whatsapp, Mail };
 			class="flex flex-col items-center justify-center bg-primary text-white max-md:gap-4 md:flex-row"
 		>
 			{
-				footerLinks.map(({ display }) => {
+				footerLinks.map(({ display, url }) => {
 					const Icon = icons[display];
-					return (
+					return url ? (
+						<li class="z-20 flex gap-1 bg-primary px-2">
+							<Icon />
+							<a href={url} target="_blank" rel="noreferrer">
+								{display}
+							</a>
+						</li>
+					) : (
 						<li class="z-20 flex gap-1 bg-primary px-2">
 							<Icon />
 							<p>{display}</p>
