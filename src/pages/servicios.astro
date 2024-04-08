@@ -1,0 +1,56 @@
+---
+import Layout from '@layouts/Layout.astro';
+import { SERVICIOS } from '@data/siteConfig';
+---
+
+<Layout
+	title="Servicios ~ Miguel Galicia ~ Event Planner"
+	bgColor="secondary"
+	btnHighlightClass="secondary"
+>
+	<div class="pb-6 pt-[85px] text-center">
+		<h1 class="text-2xl font-bold text-primary">¡Conoce mis servicios!</h1>
+		<p class="text-lg uppercase text-primary md:text-3xl">
+			Organizacion, produccion y protocolo de eventos
+		</p>
+	</div>
+	<div class="mx-auto w-full xl:max-w-[1024px]">
+		<ul class="flex flex-col gap-y-8">
+			{
+				SERVICIOS.map(({ title, description, imgUrl, bgColor }) => {
+					const bgColors: any = {
+						uno: 'bg-[#4C5A71]',
+						dos: 'bg-[#7D8599]',
+						tres: 'bg-[#ADB3BC]'
+					};
+					return (
+						<li>
+							<article
+								class={`grid-rows[auto_auto_auto] grid py-8 md:grid-cols-[35%_65%] ${bgColors[bgColor]} `}
+							>
+								<img src={imgUrl} class="w-full" alt="" />
+								<div class={`mx-auto max-w-[666px] text-center md:mx-0`}>
+									<h2 class="py-8 text-3xl font-extrabold text-primary">{title}</h2>
+									<p
+										id={title}
+										class=" hyphens-manual px-4 text-justify font-sans text-xl tracking-wider text-primary md:pr-20"
+									>
+										{description}
+									</p>
+								</div>
+							</article>
+						</li>
+					);
+				})
+			}
+		</ul>
+	</div>
+</Layout>
+<script>
+	import { SERVICIOS } from '@data/siteConfig';
+	SERVICIOS.map(({ title, description }) => {
+		const articleParagrahp = document.getElementById(title);
+		if (!articleParagrahp) return;
+		articleParagrahp.innerHTML = description;
+	});
+</script>
