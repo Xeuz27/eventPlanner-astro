@@ -10,7 +10,7 @@ export const navLinks = [
 	{ display: 'Sobre Mi', path: '/sobre-mi' },
 	{ display: 'Servicios', path: '/servicios' },
 	{ display: 'Eventos', path: '/eventos' },
-	{ display: 'Contactame', path: '/contactame', highlight: true }
+	{ display: 'Contáctame', path: '/contactame', highlight: true }
 ];
 interface footerLinks {
 	display: string;
