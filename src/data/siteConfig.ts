@@ -3,6 +3,12 @@ import img1 from '../assets/pag3_img3.webp';
 import img2 from '../assets/pag3_img2.webp';
 import img3 from '../assets/pag3_img1.webp';
 
+import bodas from '../assets/bodas.webp';
+import talleres from '../assets/talleres.svg';
+import celebraciones from '../assets/celebraciones.astro';
+import compromisos from '../assets/compromisos.astro';
+import bautizos from '../assets/bautizos.svg';
+
 interface navLinks {
 	display: string;
 	path: string;
@@ -68,6 +74,8 @@ export const services = [
 ];
 interface SERVICIOS {
 	title: string;
+	bgColor: string;
+	imgUrl: string;
 	description: string;
 }
 export const SERVICIOS = [
@@ -92,4 +100,16 @@ export const SERVICIOS = [
 		description:
 			'Inicio la coordinación un mes antes del evento. Recopi&shy;lando, verificando y confirmando la información de los proveedores que han sido contratados por el cliente. Diseño los tiempos de las actividades y coordino la logís&shy;tica del día del evento.'
 	}
+];
+interface servicios3 {
+	title: string;
+	icon: string;
+	imgUrl: string;
+}
+export const servicios3 = [
+	{ title: 'bodas', icon: bodas.src },
+	{ title: 'talleres', icon: talleres.src },
+	{ title: 'celebraciones', icon: celebraciones },
+	{ title: 'compromisos', icon: compromisos },
+	{ title: 'bautizos', icon: bautizos.src }
 ];
